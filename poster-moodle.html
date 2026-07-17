@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملصق تعريفي - Moodle Account System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #fbf7f4;
+            --bg-card: #ffffff;
+            --primary: #f97316; /* Moodle Orange */
+            --primary-light: #fdba74;
+            --accent: #312e81; /* Indigo Cap */
+            --accent-light: #4f46e5;
+            --text-main: #1e1b4b;
+            --text-secondary: #475569;
+            --border-color: rgba(0, 0, 0, 0.06);
+            --glow: 0 10px 25px rgba(249, 115, 22, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(249, 115, 22, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(49, 46, 129, 0.05) 0%, transparent 40%);
+        }
+
+        .poster-container {
+            max-width: 900px;
+            width: 100%;
+            background: linear-gradient(135deg, #ffffff, #fffbf9);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 50px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(49, 46, 129, 0.08), 0 0 50px rgba(249, 115, 22, 0.04);
+            backdrop-filter: blur(12px);
+            overflow: hidden;
+        }
+
+        .poster-container::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            left: -150px;
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.06;
+            z-index: 1;
+        }
+
+        .poster-container::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            right: -150px;
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.06;
+            z-index: 1;
+        }
+
+        .inner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding-bottom: 30px;
+        }
+
+        .badge {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent) 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .showcase {
+            background: rgba(249, 115, 22, 0.03);
+            border: 1px solid rgba(249, 115, 22, 0.08);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .showcase-text {
+            flex: 1;
+        }
+
+        .showcase-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .showcase-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .showcase-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fffbeb, #ffedd5);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            width: 140px;
+            height: 140px;
+            font-size: 3.5rem;
+            color: var(--primary);
+            box-shadow: var(--glow);
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(249, 115, 22, 0.1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(249, 115, 22, 0.25); }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 45px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(249, 115, 22, 0.25);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-icon {
+            background: rgba(249, 115, 22, 0.06);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(249, 115, 22, 0.12);
+        }
+
+        .feature-card:nth-child(even) .feature-icon {
+            background: rgba(49, 46, 129, 0.06);
+            color: var(--accent);
+            border-color: rgba(49, 46, 129, 0.12);
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .highlights-row {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.01);
+            border: 1px dashed var(--border-color);
+            border-radius: 16px;
+            padding: 20px 30px;
+            margin-bottom: 45px;
+            gap: 20px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .highlight-item i {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .highlight-item span {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .highlight-item label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .accent-text {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .showcase { flex-direction: column; text-align: center; }
+            .highlights-row { flex-direction: column; gap: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <div class="inner-content">
+            <header>
+                <span class="badge"><i class="fa-solid fa-graduation-cap"></i> نظام طلب الحسابات الجامعي</span>
+                <h1>Moodle Account System</h1>
+                <p class="subtitle">منصة متطورة تمكن الطلبة من تقديم طلبات إنشاء حساباتهم للولوج إلى منصة التعليم عن بعد Moodle وإدارتها بسلاسة.</p>
+            </header>
+
+            <div class="showcase">
+                <div class="showcase-text">
+                    <h3><i class="fa-solid fa-user-plus"></i> أتمتة وتنظيم طلبات ولوج الطلبة</h3>
+                    <p>يعمل النظام على تسهيل استقبال بيانات الطلبة مثل (الاسم، اللقب، تاريخ الميلاد، رقم التسجيل، الكلية، والمنصب)، والتحقق من صحتها آلياً ومن ثم توليد حسابات الولوج لمنصة Moodle بشكل معتمد لتسريع وتيرة التحول الرقمي بالجامعة.</p>
+                </div>
+                <div class="showcase-visual">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <h3>استمارة التسجيل الذكية</h3>
+                    <p>استمارة تفاعلية للطلبة لإدخال معلوماتهم الشخصية والأكاديمية بالتفصيل مع تحقق فوري من صحة هيكل رقم التسجيل.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <h3>فلترة وتوزيع الطلبات</h3>
+                    <p>فرز تلقائي للطلبات حسب الكليات والأقسام لتسهيل المراجعة على مشرفي النظام بكل كلية بشكل مستقل.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-key"></i></div>
+                    <h3>توليد حسابات مودل</h3>
+                    <p>تصدير قوائم الحسابات الجاهزة آلياً بصيغ متوافقة تماماً مع قاعدة بيانات منصة Moodle لرفعها بنقرة زر.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-bell"></i></div>
+                    <h3>إشعار الطلبة بالجاهزية</h3>
+                    <p>نظام إشعارات يتيح للطالب معرفة حالة طلبه وتزويده ببيانات تسجيل الدخول فور اعتماد حسابه.</p>
+                </div>
+            </div>
+
+            <div class="highlights-row">
+                <div class="highlight-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>تأمين شامل للبيانات</span>
+                    <label>حماية خصوصية الطلبة</label>
+                </div>
+                <div class="highlight-item">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>أداء فائق السرعة</span>
+                    <label>توليد آلاف الحسابات بثوانٍ</label>
+                </div>
+                <div class="highlight-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>إحصائيات التسجيل</span>
+                    <label>مراقبة نسب تفعيل الحسابات</label>
+                </div>
+            </div>
+
+            <footer>
+                <p class="footer-text">Moodle Account System &copy; 2026. من إنشاء المهندسة: <span class="accent-text">Saloua Bourmada - Ingénieur en Informatique 2026</span>. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
