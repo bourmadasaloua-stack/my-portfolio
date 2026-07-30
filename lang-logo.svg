@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="langBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#312e81" />
+    </linearGradient>
+    
+    <!-- English Cyan/Blue Gradient -->
+    <linearGradient id="engGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <!-- French Rose/Pink Gradient -->
+    <linearGradient id="frGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+
+    <!-- Gold Accent Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <filter id="langGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Card Frame -->
+  <rect width="512" height="512" rx="128" fill="url(#langBg)" stroke="rgba(99, 102, 241, 0.3)" stroke-width="4"/>
+
+  <!-- Stars & Sparks -->
+  <circle cx="100" cy="110" r="5" fill="#38bdf8" opacity="0.8"/>
+  <circle cx="420" cy="100" r="6" fill="#fb7185" opacity="0.8"/>
+  <circle cx="410" cy="400" r="4" fill="#fef08a" opacity="0.9"/>
+  <circle cx="90" cy="380" r="6" fill="#818cf8" opacity="0.7"/>
+
+  <!-- Left Speech Bubble - English (ENG) -->
+  <path d="M 130 170 C 130 130, 260 130, 260 170 C 260 210, 190 230, 160 245 C 160 230, 130 210, 130 170 Z" fill="url(#engGrad)" filter="url(#langGlow)" opacity="0.95"/>
+  <text x="182" y="182" font-family="'Outfit', sans-serif" font-weight="800" font-size="34" fill="#ffffff" text-anchor="middle">ENG</text>
+
+  <!-- Right Speech Bubble - French (FR) -->
+  <path d="M 380 230 C 380 190, 250 190, 250 230 C 250 270, 320 290, 350 305 C 350 290, 380 270, 380 230 Z" fill="url(#frGrad)" filter="url(#langGlow)" opacity="0.95"/>
+  <text x="320" y="242" font-family="'Outfit', sans-serif" font-weight="800" font-size="34" fill="#ffffff" text-anchor="middle">FR</text>
+
+  <!-- Open Book & Audio Waves Base -->
+  <path d="M 140 370 C 200 350, 250 365, 256 372 C 262 365, 312 350, 372 370 L 372 400 C 312 380, 262 392, 256 400 C 250 392, 200 380, 140 400 Z" fill="url(#goldGrad)" opacity="0.9"/>
+  <path d="M 145 360 C 200 340, 250 355, 256 362 C 262 355, 312 340, 367 360 L 367 390 C 312 370, 262 382, 256 390 C 250 382, 200 370, 145 390 Z" fill="#ffffff"/>
+
+  <!-- Headset / Learning Audio Arc -->
+  <path d="M 160 320 A 110 110 0 0 1 352 320" fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="10 6"/>
+
+  <!-- Central Crown / Star of Excellence -->
+  <polygon points="256,100 262,118 281,118 266,129 271,147 256,135 241,147 246,129 231,118 250,118" fill="url(#goldGrad)" filter="url(#langGlow)"/>
+</svg>
