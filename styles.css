@@ -209,11 +209,13 @@ nav {
     box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
 }
 
-.hero-showcase-img {
+.hero-showcase-img,
+.hero-showcase-video {
     width: 100%;
     height: auto;
     border-radius: 16px;
     display: block;
+    object-fit: cover;
 }
 
 .signature-badge {
