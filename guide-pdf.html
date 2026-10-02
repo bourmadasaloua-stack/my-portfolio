@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدليل الشامل لأدوات الذكاء الاصطناعي 2026 | Saloua Bourmada (PDF)</title>
+    
+    <!-- Google Fonts: Alexandria & Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/saloua_logo.jpg">
+
+    <style>
+        :root {
+            --primary: #0891b2;
+            --primary-dark: #0e7490;
+            --secondary: #3b82f6;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+            --tag-bg: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Alexandria', 'Cairo', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 30px 20px;
+        }
+
+        .pdf-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 45px 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Floating Print Bar (Hidden on Print) */
+        .no-print-bar {
+            position: sticky;
+            top: 15px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #0891b2, #0d9488);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(8, 145, 178, 0.35);
+        }
+
+        .no-print-bar button {
+            background: white;
+            color: #0891b2;
+            border: none;
+            padding: 10px 22px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            font-family: inherit;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.2s;
+        }
+
+        .no-print-bar button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            background: #f0fdfa;
+        }
+
+        .no-print-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Cover Header */
+        .pdf-header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .author-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #f0fdfa;
+            border: 1px solid #ccfbf1;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 15px;
+        }
+
+        .author-badge img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .author-badge span {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .pdf-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .pdf-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Table of Contents */
+        .toc-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 35px;
+        }
+
+        .toc-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 20px;
+            list-style: none;
+        }
+
+        .toc-list li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .toc-list li a:hover {
+            color: var(--primary);
+        }
+
+        /* Category Section */
+        .category-section {
+            margin-bottom: 40px;
+            page-break-inside: auto;
+        }
+
+        .category-heading {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0891b2, #0e7490);
+            padding: 10px 18px;
+            border-radius: 10px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Tool Detailed Item */
+        .tool-doc-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-right: 5px solid var(--primary);
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .tool-doc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tool-doc-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tool-doc-name img {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+        }
+
+        .pricing-pill {
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .pill-free {
+            background: #dcfce7;
+            color: #15803d;
+            border: 1px solid #86efac;
+        }
+
+        .pill-freemium {
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #7dd3fc;
+        }
+
+        .pill-paid {
+            background: #fef3c7;
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+
+        .tool-doc-desc {
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        .tool-doc-meta {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 14px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tool-doc-meta a {
+            color: #0891b2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Step by Step Box */
+        .steps-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px 18px;
+        }
+
+        .steps-title {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .steps-list {
+            padding-right: 20px;
+            font-size: 0.88rem;
+            color: #334155;
+        }
+
+        .steps-list li {
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .steps-list li strong {
+            color: #0f172a;
+        }
+
+        /* Footer */
+        .pdf-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Print Specific Rules */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .pdf-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            .no-print-bar {
+                display: none !important;
+            }
+            .tool-doc-card {
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            .category-section {
+                page-break-inside: auto;
+            }
+            .category-heading {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Top Bar for Print Action -->
+    <div class="pdf-container">
+        <div class="no-print-bar">
+            <div>
+                <i class="fa-solid fa-file-pdf" style="font-size: 1.2rem; margin-left: 6px;"></i>
+                <strong>دليل أدوات الذكاء الاصطناعي 2026</strong> (جاهز للطباعة والتحميل)
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <a href="index.html"><i class="fa-solid fa-arrow-right"></i> العودة للموقع</a>
+                <button onclick="window.print()">
+                    <i class="fa-solid fa-download"></i> حفظ / تحميل كـ PDF
+                </button>
+            </div>
+        </div>
+
+        <!-- Cover Header -->
+        <header class="pdf-header">
+            <div class="author-badge">
+                <img src="assets/saloua_profile.jpg" alt="Saloua Bourmada" onerror="this.src='assets/saloua_logo.jpg'">
+                <span>إعداد وإشراف: المهندسة Saloua Bourmada &bull; مهندسة ذكاء اصطناعي وبرمجيات</span>
+            </div>
+            <h1 class="pdf-title">عالم أدوات الذكاء الاصطناعي 2026</h1>
+            <p class="pdf-subtitle">
+                الدليل الشامل والعملي لأبرز وأشهر أدوات الذكاء الاصطناعي العالمية والمجانية، وظيفة كل أداة، وطريقة استخدامها خطوة بخطوة.
+            </p>
+        </header>
+
+        <!-- Table of Contents -->
+        <div class="toc-box">
+            <div class="toc-title"><i class="fa-solid fa-list-check"></i> أقسام الدليل:</div>
+            <ul class="toc-list">
+                <li><a href="#cat-writing">✍️ 1. أدوات الكتابة والمحادثة والتلخيص</a></li>
+                <li><a href="#cat-image">🎨 2. أدوات توليد وتعديل الصور والفنون</a></li>
+                <li><a href="#cat-video">🎬 3. أدوات الفيديو والأنيميشن والمونتاج</a></li>
+                <li><a href="#cat-audio">🎙️ 4. أدوات الصوت والموسيقى وعزل الضوضاء</a></li>
+                <li><a href="#cat-code">💻 5. أدوات البرمجة ومحررات الأكواد</a></li>
+                <li><a href="#cat-pdf">📄 6. أدوات مستندات PDF والأبحاث العلمية</a></li>
+                <li><a href="#cat-search">🔍 7. محركات البحث الذكية والإنتاجية</a></li>
+                <li><a href="#cat-presentation">📊 8. العروض التقديمية وتحليل البيانات</a></li>
+            </ul>
+        </div>
+
+        <!-- ==========================================
+             ✍️ 1. الكتابة وتوليد النصوص
+             ========================================== -->
+        <section class="category-section" id="cat-writing">
+            <div class="category-heading"><i class="fa-solid fa-pen-nib"></i> 1. أدوات الكتابة والمحادثة وصناعة المحتوى</div>
+
+            <!-- DeepSeek -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=128" alt="DeepSeek">
+                        <span>1. DeepSeek AI (الذكاء الاصطناعي المجاني الثوري)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100%</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> نموذج ذكاء اصطناعي مفتوح المصدر فائق القوة، يتميز بنموذج التفكير العميق (DeepSeek R1) المتفوق في حل المسائل الرياضية، البرمجة المعقدة، والتحليل المنطقي بدون أي رسوم.
+                </p>
+                <div class="tool-doc-meta">
+                    <span>🌐 <strong>الموقع:</strong> <a href="https://chat.deepseek.com" target="_blank">chat.deepseek.com</a></span>
+                    <span>🏷️ <strong>الاستخدام:</strong> برمجة، حل معادلات، كتابة نصوص، بحوث</span>
+                </div>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> طريقة الاستخدام خطوة بخطوة:</div>
+                    <ol class="steps-list">
+                        <li>ادخل إلى الموقع الرسمي <strong>chat.deepseek.com</strong> وسجل دخولك مجاناً عبر حساب Google.</li>
+                        <li>فعّل زر <strong>"DeepThink (R1)"</strong> إذا كان سؤالك يتطلب تحليلاً منطقياً أو برمجة معقدة.</li>
+                        <li>اكتب سؤالك أو مسألتك أو كودك البرمجي واضغط إرسال (Enter).</li>
+                        <li>ستشاهد الأداة تفكر أمامك وتستعرض خطوات التفكير والاستنتاج قبل كتابة الحل النهائي.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- ChatGPT -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128" alt="ChatGPT">
+                        <span>2. ChatGPT من OpenAI</span>
+                    </div>
+                    <span class="pricing-pill pill-freemium">🎁 مجاني جزئياً (Freemium)</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> النموذج الأكثر شهرة للمحادثة التفاعلية، تأليف المقالات، صياغة الإيميلات، الترجمة الاحترافية، والبحث المباشر على الإنترنت وتحليل الملفات والصور.
+                </p>
+                <div class="tool-doc-meta">
+                    <span>🌐 <strong>الموقع:</strong> <a href="https://chatgpt.com" target="_blank">chatgpt.com</a></span>
+                    <span>🏷️ <strong>الاستخدام:</strong> محادثة عامة، صياغة محتوى، ترجمة، تلخيص</span>
+                </div>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> طريقة الاستخدام خطوة بخطوة:</div>
+                    <ol class="steps-list">
+                        <li>توجه إلى <strong>chatgpt.com</strong> وقم بإنشاء حساب مجاني.</li>
+                        <li>اكتب في صندوق الدردشة ما تريده بالتفصيل (مثل: "اكتب مقالاً عن الذكاء الاصطناعي مع 5 نصائح للمبتدئين").</li>
+                        <li>يمكنك رفع ملف أو صورة بالضغط على أيقونة المشبك لتحليلها وتلخيصها.</li>
+                        <li>يمكنك طلب تعديل الصياغة أو تلخيص الإجابة بنقرة واحدة.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Claude AI -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=128" alt="Claude">
+                        <span>3. Claude AI من Anthropic</span>
+                    </div>
+                    <span class="pricing-pill pill-freemium">🎁 مجاني جزئياً (Freemium)</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> يتميز بأقوى أسلوب كتابة أدبي وطبيعي شبيه بالبشر، وفهم مذهل للنصوص الطويلة والأوراق العلمية المعقدة دون أخطاء هلوسة.
+                </p>
+                <div class="tool-doc-meta">
+                    <span>🌐 <strong>الموقع:</strong> <a href="https://claude.ai" target="_blank">claude.ai</a></span>
+                </div>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> خطوات الاستخدام:</div>
+                    <ol class="steps-list">
+                        <li>افتح <strong>claude.ai</strong> وسجل بريدك الإلكتروني.</li>
+                        <li>ارفع ملفات PDF أو نصوصاً طويلة واسأله عن أدق التفاصيل والاستنتاجات.</li>
+                        <li>استفد من ميزة Artifacts لعرض وتجربة الأكواد والتصاميم التفاعلية في شاشة جانبية.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- DuckDuckGo AI -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=duckduckgo.com&sz=128" alt="DuckDuckGo AI">
+                        <span>4. DuckDuckGo AI Chat (مجهول ومجاني 100%)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100%</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> تمنحك وصولاً مجانياً وغير محدود لنماذج GPT-4o mini و Claude 3 Haiku و Llama 3 بدون تسجيل دخول وبدون تتبع بياناتك.
+                </p>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> خطوات الاستخدام:</div>
+                    <ol class="steps-list">
+                        <li>ادخل مباشرة إلى <strong>duckduckgo.com/?ia=chat</strong> بدون تسجيل.</li>
+                        <li>اختر النموذج المفضل من القائمة العلوية (GPT-4o mini أو Claude أو Llama).</li>
+                        <li>ابدأ المحادثة بحرية وخصوصية كاملة.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             🎨 2. توليد الصور والتصميم
+             ========================================== -->
+        <section class="category-section" id="cat-image">
+            <div class="category-heading"><i class="fa-solid fa-palette"></i> 2. أدوات توليد وتعديل الصور والفنون الرقمية</div>
+
+            <!-- Microsoft Designer -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=128" alt="Microsoft Designer">
+                        <span>1. Microsoft Designer / Bing Creator (DALL-E 3 المجاني)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100%</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> توليد 4 صور فائقة الدقة لكل طلب من خلال نموذج DALL-E 3 المتطور مجاناً برصيد نقاط يومي متجدد من مايكروسوفت.
+                </p>
+                <div class="tool-doc-meta">
+                    <span>🌐 <strong>الموقع:</strong> <a href="https://designer.microsoft.com/image-creator" target="_blank">designer.microsoft.com/image-creator</a></span>
+                </div>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> طريقة الاستخدام خطوة بخطوة:</div>
+                    <ol class="steps-list">
+                        <li>افتح الموقع وسجل دخولك بحساب Microsoft (أو بريد Hotmail/Outlook).</li>
+                        <li>في شريط الأوامر، صف الصورة التي تتخيلها باللغة العربية أو الإنجليزية (مثال: "رائد فضاء عربي يقرأ كتاباً على سطح القمر، إضاءة سينمائية 4K").</li>
+                        <li>اضغط على زر <strong>"إنشاء (Create)"</strong> وانتظر 10 ثوانٍ.</li>
+                        <li>اختر الصورة المفضلة من بين 4 خيارات واضغط <strong>"تنزيل (Download)"</strong> بجودة كاملة.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Leonardo.Ai -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=leonardo.ai&sz=128" alt="Leonardo">
+                        <span>2. Leonardo.Ai (استوديو الصور الاحترافي)</span>
+                    </div>
+                    <span class="pricing-pill pill-freemium">🎁 150 نقطة مجانية يومياً</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> توليد تصاميم الألعاب، الشخصيات ثلاثية الأبعاد، اللوحات الفنية، وتصاميم الأزياء بدقة واقعية وتحكم في أبعاد وأسلوب الصورة.
+                </p>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> خطوات الاستخدام:</div>
+                    <ol class="steps-list">
+                        <li>توجه إلى <strong>leonardo.ai</strong> وأنشئ حسابك مجاناً لتحصل على 150 نقطة متجددة يومياً.</li>
+                        <li>انقر على <strong>"Image Generation"</strong>.</li>
+                        <li>اختر النمط (مثل: Leonardo Phoenix أو Anime أو Photoreal).</li>
+                        <li>اكتب الوصف واضغط <strong>Generate</strong> لتحميل صور احترافية بدون علامة مائية.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- SeaArt -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=seaart.ai&sz=128" alt="SeaArt">
+                        <span>3. SeaArt AI (رسم وتعديل الصور مجاناً)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني بنقاط يومية</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> منصة سهلة ومجانية توفر آلاف النماذج الجاهزة لتوليد صور الأنمي والواقعية ومسح الخلفيات ورفع دقة الصور بجودة 4K.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             🎬 3. الفيديو والأنيميشن والمونتاج
+             ========================================== -->
+        <section class="category-section" id="cat-video">
+            <div class="category-heading"><i class="fa-solid fa-video"></i> 3. أدوات الفيديو والأنيميشن والمونتاج الذكي</div>
+
+            <!-- CapCut AI -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=capcut.com&sz=128" alt="CapCut">
+                        <span>1. CapCut AI (محرر الفيديو الشامل)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100%</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> أفضل محرر فيديو مجاني يولد نصوص الترجمة التلقائية (Auto Captions) بالعربي والإنجليزي، يزيل خلفيات الفيديو، ويحسن جودة الإضاءة والصوت.
+                </p>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> خطوات الاستخدام:</div>
+                    <ol class="steps-list">
+                        <li>افتح تطبيق أو موقع <strong>capcut.com</strong>.</li>
+                        <li>استورد الفيديو واضغط على <strong>"Auto Captions"</strong> لإنشاء نصوص متحركة معبرة متزامنة مع الكلام تلقائياً.</li>
+                        <li>استخدم أدوات <strong>AI Effects</strong> لتحسين جودة الفيديو وتصديره بدقة 1080p أو 4K مجاناً.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Kling AI -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=klingai.com&sz=128" alt="Kling AI">
+                        <span>2. Kling AI (توليد الفيديو السينمائي)</span>
+                    </div>
+                    <span class="pricing-pill pill-freemium">🎁 66 نقطة مجانية يومياً</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> تحويل النص أو الصور الثابتة إلى مقاطع فيديو فائقة الواقعية بحركات كاميرا وانعكاسات فيزيائية مذهلة.
+                </p>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> خطوات الاستخدام:</div>
+                    <ol class="steps-list">
+                        <li>ادخل إلى <strong>klingai.com</strong> وسجل حسابك.</li>
+                        <li>اختر <strong>Text to Video</strong> أو <strong>Image to Video</strong>.</li>
+                        <li>ارفع صورتك واكتب الحركة المطلوبة، ثم اضغط <strong>Generate</strong> لتحميل الفيديو.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Viggle AI -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=viggle.ai&sz=128" alt="Viggle">
+                        <span>3. Viggle AI (تحريك الشخصيات والرقص)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100%</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> دمج أي شخصية من صورة ثابتة في فيديو حركي (رقص، مشي، تمثيل) مع تطابق دقيق ومرح للحركات.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             🎙️ 4. الصوت والموسيقى
+             ========================================== -->
+        <section class="category-section" id="cat-audio">
+            <div class="category-heading"><i class="fa-solid fa-microphone-lines"></i> 4. أدوات الصوت والموسيقى والتعليق الصوتي</div>
+
+            <!-- Vocal Remover -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=vocalremover.org&sz=128" alt="Vocal Remover">
+                        <span>1. Vocal Remover AI (فصل الصوت والموسيقى)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100%</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> أداة سريعة ومجانية تماماً تفصل صوت المغني/المتحدث عن الموسيقى التصويرية وتزيل التشويش والصدى بنقرة واحدة.
+                </p>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> خطوات الاستخدام:</div>
+                    <ol class="steps-list">
+                        <li>ادخل إلى <strong>vocalremover.org</strong> مباشرة.</li>
+                        <li>ارفع ملف الصوت أو الأغنية بصيغة MP3 أو WAV.</li>
+                        <li>سيعطيك الموقع شريطي تحكم منفصلين: شريط للصوت البشري وشريط للموسيقى.</li>
+                        <li>قم بتحميل المسار الصوتي النقي أو مسار الموسيقى بدون صوت مجاناً.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- ElevenLabs -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128" alt="ElevenLabs">
+                        <span>2. ElevenLabs (التعليق الصوتي البشري واستنساخ الأصوات)</span>
+                    </div>
+                    <span class="pricing-pill pill-freemium">🎁 10,000 حرف مجاني شهرياً</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> تحويل أي نص عربي أو إنجليزي إلى صوت بشري واقعي بمشاعر ونبرات طبيعية لا يمكن تمييزها عن صوت الإنسان الحقيقي.
+                </p>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> خطوات الاستخدام:</div>
+                    <ol class="steps-list">
+                        <li>توجه إلى <strong>elevenlabs.io</strong> وسجل حساباً مجانياً.</li>
+                        <li>الصق النص العربي المراد تحويله لصوت واضبط التشكيل لضمان قراءة نحوية سليمة.</li>
+                        <li>اختر الصوت ونبرة الإلقاء، ثم اضغط <strong>Generate Speech</strong> واستمع وحمّل الصوت.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Suno AI -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=suno.com&sz=128" alt="Suno">
+                        <span>3. Suno AI (صناعة الأغاني والموسيقى بالكلمات)</span>
+                    </div>
+                    <span class="pricing-pill pill-freemium">🎁 50 نقطة يومياً (10 أغانٍ)</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> تأليف أغنية كاملة بأي نمط موسيقي (بوب، روك، عربي، طربي) مع الكلمات والتلحين والغناء خلال ثوانٍ.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             💻 5. البرمجة والتطوير
+             ========================================== -->
+        <section class="category-section" id="cat-code">
+            <div class="category-heading"><i class="fa-solid fa-code"></i> 5. أدوات البرمجة ومحررات الأكواد الذكية</div>
+
+            <!-- Codeium -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=codeium.com&sz=128" alt="Codeium">
+                        <span>1. Codeium (المساعد البرمجي المجاني للأفراد)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100% للأفراد</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> بديل مجاني فائق السرعة لـ GitHub Copilot يعمل داخل VS Code و JetBrains لإكمال الأكواد، كتابة الدوال، والبحث في المشروع.
+                </p>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> خطوات الاستخدام:</div>
+                    <ol class="steps-list">
+                        <li>افتح محرر <strong>VS Code</strong> وثبت إضافة <strong>Codeium</strong> من متجر الإضافات.</li>
+                        <li>سجل حسابك مجاناً لتفعيل الإضافة مدى الحياة.</li>
+                        <li>أثناء كتابة الكود، ستظهر لك اقتراحات رمادية ذكية، اضغط <strong>Tab</strong> لقبول الاقتراح فوراً.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Supermaven -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=supermaven.com&sz=128" alt="Supermaven">
+                        <span>2. Supermaven (أسرع مكمل أكواد في العالم)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 خطة مجانية سريعة</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> إكمال الأكواد بسرعة استجابة لحظية وسياق ضخم يفهم آلاف أسطر مشروعك البرمجي.
+                </p>
+            </div>
+
+            <!-- Cursor AI -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=cursor.com&sz=128" alt="Cursor">
+                        <span>3. Cursor AI (محرر المستقبل البرمجي)</span>
+                    </div>
+                    <span class="pricing-pill pill-freemium">🎁 تجربة مجانية ممتازة</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> محرر أكواد كامل مدمج بنماذج ذكاء اصطناعي تفهم مشروعك البرمجي بالكامل وتقوم ببناء وتعديل الملفات باحترافية.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             📄 6. مستندات PDF والأبحاث
+             ========================================== -->
+        <section class="category-section" id="cat-pdf">
+            <div class="category-heading"><i class="fa-solid fa-file-pdf"></i> 6. أدوات مستندات PDF والأبحاث العلمية</div>
+
+            <!-- PDFgear -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=pdfgear.com&sz=128" alt="PDFgear">
+                        <span>1. PDFgear AI (قارئ ومحلل PDF مجاني بالكامل)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100% بدون قيود</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> برنامج مجاني تماماً لقراءة ملفات PDF، تلخيص الكتب والبحوث، استخراج الإجابات، والتحويل بين Word و PDF بدون إعلانات أو اشتراك.
+                </p>
+                <div class="steps-box">
+                    <div class="steps-title"><i class="fa-solid fa-shoe-prints"></i> خطوات الاستخدام:</div>
+                    <ol class="steps-list">
+                        <li>حمل برنامج <strong>PDFgear</strong> مجاناً من <strong>pdfgear.com</strong> على حاسوبك أو هاتفك.</li>
+                        <li>افتح أي ملف PDF ثم انقر على أيقونة <strong>AI Chatbot</strong> في الشريط الجانبي.</li>
+                        <li>اطلب تلخيص الكتاب أو اسأله عن فقرة محددة وسيجيبك مع الإشارة لرقم الصفحة.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Semantic Scholar -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=semanticscholar.org&sz=128" alt="Semantic Scholar">
+                        <span>2. Semantic Scholar (محرك الأبحاث الأكاديمي)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100%</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> محرك بحث أكاديمي ذكي من معهد ألين للذكاء الاصطناعي يلخص الأوراق البحثية، يستخرج الاستشهادات والنتائج العلمية الموثقة مجاناً.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             🔍 7. البحث والإنتاجية والعروض
+             ========================================== -->
+        <section class="category-section" id="cat-search">
+            <div class="category-heading"><i class="fa-solid fa-magnifying-glass-chart"></i> 7. محركات البحث الذكية والعروض التقديمية</div>
+
+            <!-- Phind -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=phind.com&sz=128" alt="Phind">
+                        <span>1. Phind Search (محرك البحث للمطورين)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100%</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> محرك بحث متخصص في البرمجة والتقنية، يعطيك شفرات برمجية جاهزة وحلولاً مباشرة للأخطاء مع مصادر وشروحات حية.
+                </p>
+            </div>
+
+            <!-- Genspark -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=genspark.ai&sz=128" alt="Genspark">
+                        <span>2. Genspark AI (توليد صفحات البحث التفاعلية)</span>
+                    </div>
+                    <span class="pricing-pill pill-free">🟢 مجاني 100%</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> يولد صفحات ويب تفاعلية شاملة وملخصة عن أي موضوع تبحث عنه يجمع فيها النصوص، المقارنات، والمصادر بدون إعلانات.
+                </p>
+            </div>
+
+            <!-- Gamma App -->
+            <div class="tool-doc-card">
+                <div class="tool-doc-header">
+                    <div class="tool-doc-name">
+                        <img src="https://www.google.com/s2/favicons?domain=gamma.app&sz=128" alt="Gamma">
+                        <span>3. Gamma App (صناعة العروض التقديمية في دقيقة)</span>
+                    </div>
+                    <span class="pricing-pill pill-freemium">🎁 رصيد مجاني كافٍ</span>
+                </div>
+                <p class="tool-doc-desc">
+                    <strong>ماذا تفعل الأداة:</strong> اكتب عنوان العرض أو الفكرة وسيقوم بإنشاء شرائح PowerPoint كاملة بالصور والتنسيقات الجرافيكية المبهرة في دقيقة واحدة.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pdf-footer">
+            <p><strong>تم إعداد وتنسيق هذا الدليل بواسطة: المهندسة Saloua Bourmada &copy; 2026</strong></p>
+            <p>مكتبة أدوات الذكاء الاصطناعي الشاملة &bull; جميع الحقوق محفوظة</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
