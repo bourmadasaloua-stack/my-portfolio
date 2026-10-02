@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark" data-font="alexandria">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة أدوات الذكاء الاصطناعي | Saloua Bourmada</title>
+    <meta name="description" content="أكبر مكتبة شاملة لأفضل وأحدث أدوات الذكاء الاصطناعي: نصوص، صور، فيديو، صوت، برمجة، وتلخيص PDF - بإشراف وتطوير Saloua Bourmada.">
+
+    <!-- Google Fonts: Alexandria, Readex Pro, IBM Plex Sans Arabic, Almarai, Cairo, Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Almarai:wght@300;400;700;800&family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Readex+Pro:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="ai-tools/css/style.css">
+    
+    <!-- Favicon with Saloua Bourmada's Logo -->
+    <link rel="icon" type="image/jpeg" href="ai-tools/assets/saloua_logo.jpg">
+</head>
+<body>
+
+    <!-- Ambient Glowing Background Mesh -->
+    <div class="bg-mesh">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+        <div class="mesh-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-brand" title="العودة لمعرض الأعمال">
+                <img src="ai-tools/assets/saloua_profile.jpg" alt="Saloua Bourmada" class="user-brand-avatar" onerror="this.src='ai-tools/assets/saloua_logo.jpg'">
+                <div class="logo-text">
+                    <h1>عالم أدوات الذكاء الاصطناعي</h1>
+                    <span>AI Universe &bull; <strong class="logo-author-tag">Saloua Bourmada</strong></span>
+                </div>
+            </a>
+
+            <div class="nav-actions">
+                <!-- Back to Main Portfolio Button -->
+                <a href="index.html" class="btn btn-glass btn-sm" style="color: #38bdf8; border-color: rgba(56,189,248,0.35);" title="العودة للصفحة الرئيسية للبورتفوليو">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <span class="btn-text-hide-mobile">معرض الأعمال</span>
+                </a>
+
+                <!-- Font Selector Dropdown -->
+                <div class="font-picker-wrapper" title="تغيير نوع الخط">
+                    <i class="fa-solid fa-font font-picker-icon"></i>
+                    <select id="fontSelect" class="font-select">
+                        <option value="alexandria">✨ خط الإسكندرية (Alexandria)</option>
+                        <option value="readex">💎 خط ريدكس (Readex Pro)</option>
+                        <option value="ibm">🚀 خط آي بي إم (IBM Plex)</option>
+                        <option value="almarai">🌟 خط المراعي (Almarai)</option>
+                        <option value="cairo">🎯 خط كايرو (Cairo)</option>
+                        <option value="tajawal">🖋️ خط تجوال (Tajawal)</option>
+                    </select>
+                </div>
+
+                <!-- Download PDF Guide Button -->
+                <a href="ai-tools/guide-pdf.html" target="_blank" class="btn btn-glass btn-sm" style="color: #06b6d4; border-color: rgba(6,182,212,0.4);" title="تحميل وطباعة الدليل الشامل كـ PDF">
+                    <i class="fa-solid fa-file-pdf" style="font-size: 1.05rem;"></i>
+                    <span class="btn-text-hide-mobile">تحميل الدليل (PDF)</span>
+                </a>
+
+                <button id="viewMdBtn" class="btn btn-glass btn-sm" title="دليل وتوثيق المشروع Markdown">
+                    <i class="fa-brands fa-markdown" style="font-size: 1.1rem; color: #06b6d4;"></i>
+                    <span class="btn-text-hide-mobile">دليل المشروع (MD)</span>
+                </button>
+
+                <button id="themeToggleBtn" class="btn btn-glass btn-icon-only" title="تبديل المظهر">
+                    <i id="themeIcon" class="fa-solid fa-sun"></i>
+                </button>
+
+                <button id="addToolBtn" class="btn btn-primary">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>أضف أداة خاصة بك</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section">
+            
+            <!-- Hero Title & Creator Avatar Group -->
+            <div class="hero-title-wrapper">
+                <div class="hero-avatar-card">
+                    <div class="avatar-glow-ring"></div>
+                    <img src="ai-tools/assets/saloua_profile.jpg" alt="Saloua Bourmada" class="hero-author-avatar" onerror="this.src='ai-tools/assets/saloua_logo.jpg'">
+                    <span class="avatar-status-dot" title="متصل الآن &bull; مطور المنصة"></span>
+                </div>
+                <h1 class="hero-title">
+                    عالم <span class="gradient-text">أدوات الذكاء الاصطناعي</span>
+                </h1>
+            </div>
+
+            <!-- Subtitle & Creator Badges (تحت العنوان الكبير) -->
+            <div class="hero-subheading-badges">
+                <div class="creator-badge">
+                    <i class="fa-solid fa-sparkles" style="color: #06b6d4;"></i>
+                    <span>إعداد وتطوير: <strong>Saloua Bourmada</strong> &bull; المنصة الشاملة 2026</span>
+                    <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> موثق</span>
+                </div>
+            </div>
+            
+            <p class="hero-subtitle">
+                دليلك الشامل والمتكامل لأفضل وأقوى أدوات الذكاء الاصطناعي في العالم: توليد النصوص، تصميم الصور، تعديل الفيديو، البرمجة، والتعامل الذكي مع ملفات PDF مع شرح تفصيلي خطوة بخطوة وإمكانية تحميل أدلة الـ PDF فوراً.
+            </p>
+
+            <!-- Stats Bar Counter -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="totalToolsStat">0</div>
+                        <div class="stat-label">إجمالي الأدوات</div>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-star" style="color: #f59e0b;"></i></div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="favsCountStat">0</div>
+                        <div class="stat-label">أدواتك المفضلة</div>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-folder-plus" style="color: #06b6d4;"></i></div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="customCountStat">0</div>
+                        <div class="stat-label">أدواتك المضافة</div>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-tags" style="color: #10b981;"></i></div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="categoriesStat">9</div>
+                        <div class="stat-label">تصنيفات متخصصة</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notice Banner -->
+            <div class="info-banner">
+                <div class="info-banner-left">
+                    <i class="fa-solid fa-shield-halved info-banner-icon"></i>
+                    <div class="info-banner-text">
+                        <h4>بياناتك ومفضلتك محفوظة محلياً</h4>
+                        <p>لا حاجة لتسجيل الدخول، يمكنك تصدير واستيراد نسختك الاحتياطية في أي وقت بنقرة واحدة.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <a href="ai-tools/guide-pdf.html" target="_blank" class="btn btn-primary btn-sm" style="box-shadow: 0 4px 15px rgba(6,182,212,0.4);" title="فتح وتحميل دليل الأدوات بصيغة PDF">
+                        <i class="fa-solid fa-file-pdf"></i> كتاب الدليل (PDF)
+                    </a>
+                    <button id="exportBtn" class="btn btn-glass btn-sm" title="تصدير نسخة احتياطية">
+                        <i class="fa-solid fa-download"></i> تصدير
+                    </button>
+                    <button id="importBtn" class="btn btn-glass btn-sm" title="استيراد نسخة سابقة">
+                        <i class="fa-solid fa-upload"></i> استيراد
+                    </button>
+                    <input type="file" id="importInput" accept=".json" style="display: none;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Search, Filter & Categories Section -->
+        <section class="search-filter-section">
+            <div class="search-filter-wrapper">
+                
+                <!-- Search, Free-Only Toggle & Dropdown Filters Bar -->
+                <div class="search-bar-row">
+                    <!-- Search Input -->
+                    <div class="search-input-box">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="ابحث باسم الأداة، الوصف، الوسوم (مثل: ChatGPT، تلخيص، رسم، كود)..." autocomplete="off">
+                        <button id="clearSearchBtn" class="clear-search-btn" title="مسح البحث">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <!-- [ ] المجانية فقط Checkbox Filter -->
+                    <label class="free-only-box" for="freeOnlyCheckbox" title="إظهار الأدوات المجانية أو التي تحتوي على خطة مجانية فقط">
+                        <input type="checkbox" id="freeOnlyCheckbox">
+                        <span class="free-only-label">
+                            <i class="fa-solid fa-gift" style="color: var(--success);"></i>
+                            المجانية فقط
+                        </span>
+                    </label>
+
+                    <!-- Pricing Filter -->
+                    <select id="pricingFilter" class="filter-select">
+                        <option value="all">💎 جميع خطط الأسعار</option>
+                        <option value="free">🟢 مجاني بالكامل</option>
+                        <option value="freemium">🎁 مجاني جزئياً (Freemium)</option>
+                        <option value="paid">👑 مدفوع (Paid)</option>
+                    </select>
+
+                    <!-- Sorting Filter -->
+                    <select id="sortFilter" class="filter-select">
+                        <option value="default">⚡ الترتيب الافتراضي</option>
+                        <option value="favs-first">⭐ المفضلة أولاً</option>
+                        <option value="rating">🔥 الأعلى تقييماً</option>
+                        <option value="name-asc">🔤 الأبجدية (أ - ي)</option>
+                        <option value="name-desc">🔤 الأبجدية (ي - أ)</option>
+                    </select>
+                </div>
+
+                <!-- Category Pills Slider -->
+                <div class="categories-slider" id="categoriesContainer">
+                    <!-- Injected via JavaScript -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tools Directory Grid Section -->
+        <section class="tools-section">
+            <div class="section-header">
+                <h3 class="section-header-title">
+                    <span>قائمة الأدوات المتاحة</span>
+                    <span id="toolsCount" style="color: var(--text-muted); font-size: 1rem;">(0)</span>
+                </h3>
+            </div>
+
+            <div class="tools-grid" id="toolsGrid">
+                <!-- Tools Cards Injected Dynamically by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal: Add / Edit Custom Tool -->
+    <div class="modal-overlay" id="toolModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">
+                    <i class="fa-solid fa-plus-circle" style="color: var(--primary);"></i> أضف أداة ذكاء اصطناعي جديدة
+                </h3>
+                <button class="close-modal-btn" id="closeModalBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="toolForm">
+                <input type="hidden" id="toolId">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="toolName">اسم الأداة <span class="req">*</span></label>
+                        <input type="text" id="toolName" class="form-control" placeholder="مثال: DeepSeek, v0, Midjourney" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="toolUrl">رابط الموقع الرسمي <span class="req">*</span></label>
+                        <input type="text" id="toolUrl" class="form-control" placeholder="https://example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="toolCategory">التصنيف <span class="req">*</span></label>
+                        <select id="toolCategory" class="form-control" required>
+                            <option value="writing">✍️ كتابة ونصوص</option>
+                            <option value="image">🎨 صور وفنون</option>
+                            <option value="video">🎬 فيديو ومونتاج</option>
+                            <option value="audio">🎙️ صوت وموسيقى</option>
+                            <option value="code">💻 برمجة وتطوير</option>
+                            <option value="pdf">📄 مستندات و PDF</option>
+                            <option value="search">🔍 بحث وإنتاجية</option>
+                            <option value="presentation">📊 عروض وبيانات</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="toolPricing">نوع التسعير <span class="req">*</span></label>
+                        <select id="toolPricing" class="form-control" required>
+                            <option value="freemium">🎁 مجاني جزئياً (Freemium)</option>
+                            <option value="free">🟢 مجاني بالكامل (100% Free)</option>
+                            <option value="paid">👑 مدفوع (Paid)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="toolLogoUrl">رابط الشعار أو الأيقونة (Logo URL)</label>
+                    <input type="text" id="toolLogoUrl" class="form-control" placeholder="اتركه فارغاً ليتم جلبه تلقائياً من رابط الموقع أو أدخل رابط صورة">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="toolIconSelect">الأيقونة الاحتياطية</label>
+                        <select id="toolIconSelect" class="form-control">
+                            <option value="fa-solid fa-robot">🤖 روبوت ذكي</option>
+                            <option value="fa-solid fa-wand-magic-sparkles">✨ عصا سحرية</option>
+                            <option value="fa-solid fa-brain">🧠 عقل ومخ</option>
+                            <option value="fa-solid fa-sparkles">🌟 لمعان وشرار</option>
+                            <option value="fa-solid fa-pen-fancy">✍️ قلم وتدوين</option>
+                            <option value="fa-solid fa-palette">🎨 لوحة رسم</option>
+                            <option value="fa-solid fa-video">🎬 كاميرا وفيديو</option>
+                            <option value="fa-solid fa-microphone">🎙️ ميكروفون وصوت</option>
+                            <option value="fa-solid fa-code">💻 شفرة برمجية</option>
+                            <option value="fa-solid fa-file-pdf">📄 ملف PDF</option>
+                            <option value="fa-solid fa-bolt">⚡ صاعقة وسرعة</option>
+                            <option value="fa-solid fa-chart-line">📈 إحصائيات وبيانات</option>
+                            <option value="fa-solid fa-globe">🌐 شبكة وموقع</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">لون الأيقونة والمعاينة</label>
+                        <div class="icon-selector-row">
+                            <input type="color" id="toolIconColor" value="#06b6d4" style="height: 42px; width: 60px; padding: 2px; border: 1px solid var(--border-glass); border-radius: 8px; cursor: pointer; background: transparent;">
+                            <div class="icon-preview-box" id="iconPreview">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">معاينة الشعار/الأيقونة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="toolDesc">وصف مختصر للأداة ومميزاتها <span class="req">*</span></label>
+                    <textarea id="toolDesc" class="form-control" placeholder="اكتب نبذة تشرح ما تفعله الأداة وأبرز ما تقدمه للمستخدم..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="toolTags">الوسوم والكلمات المفتاحية (مفصولة بفاصلة)</label>
+                    <input type="text" id="toolTags" class="form-control" placeholder="مثال: شات, ذكاء اصطناعي, ترجمة, تلخيص">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-glass" id="cancelModalBtn">إلغاء</button>
+                    <button type="submit" class="btn btn-primary" id="saveToolBtn">
+                        <i class="fa-solid fa-floppy-disk"></i> حفظ الأداة
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Markdown Documentation Viewer -->
+    <div class="modal-overlay" id="mdModal">
+        <div class="modal-container" style="max-width: 760px;">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fa-brands fa-markdown" style="color: #06b6d4;"></i> دليل ومستندات المشروع (README.md)
+                </h3>
+                <button class="close-modal-btn" id="closeMdModalBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="markdown-body">
+                <h2>⚡ مكتبة أدوات الذكاء الاصطناعي (AI Tools Hub)</h2>
+                <p>دليل ومكتبة شاملة لأفضل وأشهر أدوات الذكاء الاصطناعي لعام 2026 - تم التطوير والتصميم بواسطة <strong>Saloua Bourmada</strong>.</p>
+
+                <h3>🌟 أبرز المميزات:</h3>
+                <ul>
+                    <li><strong>🌊 تصميم مائي زجاجي شفاف (Liquid Water Cards):</strong> تأثيرات انكسار ضوئي وحواف لامعة وظلال واقعية عميقة.</li>
+                    <li><strong>🔒 أقفال وشارات واقعية ثلاثية الأبعاد:</strong> أقفال نحاسية ثلاثية الأبعاد للأدوات المدفوعة وشارات ياقوتية وزمردية للأدوات المجانية.</li>
+                    <li><strong>🎨 زر وقفل زيارة الأداة بلون فيروزي ساحر (Turquoise Glow):</strong> تدرج فيروزي مائي نيون مع تفاعلات حركية.</li>
+                    <li><strong>🖼️ شعارات رسمية وأيقونات تفاعلية:</strong> عرض الشعار الرسمي لكل أداة ذكاء اصطناعي بجودة عالية.</li>
+                    <li><strong>[✓] فلترة المجانية فقط:</strong> زر تصفية فوري لإظهار الأدوات المجانية.</li>
+                    <li><strong>⭐ نظام المفضلة والتخزين المحلي:</strong> حفظ البيانات في المتصفح وتصدير/استيراد ملفات JSON.</li>
+                </ul>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="closeMdModal()">إغلاق الدليل</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Tool Details & Step-by-Step Instructions -->
+    <div class="modal-overlay" id="toolDetailsModal">
+        <div class="modal-container" style="max-width: 680px;">
+            <div class="modal-header">
+                <h3 class="modal-title" id="detailsModalTitle">
+                    <i class="fa-solid fa-circle-info" style="color: #06b6d4;"></i> شرح وتفاصيل الأداة
+                </h3>
+                <button class="close-modal-btn" id="closeDetailsModalBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div id="detailsModalBody">
+                <!-- Injected dynamically by JavaScript -->
+            </div>
+
+            <div class="modal-footer" style="justify-content: space-between; align-items: center;">
+                <button type="button" class="btn btn-glass" onclick="closeToolDetailsModal()">إغلاق</button>
+                <div style="display: flex; gap: 8px;">
+                    <button type="button" class="btn btn-glass" id="modalDownloadPdfBtn" style="color: #f87171; border-color: rgba(248,113,113,0.4);">
+                        <i class="fa-solid fa-file-pdf"></i> تحميل الشرح (PDF)
+                    </button>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modalVisitBtn">
+                        <span>زيارة الأداة</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Area -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="ai-tools/assets/saloua_profile.jpg" alt="Saloua Bourmada" class="footer-avatar" onerror="this.src='ai-tools/assets/saloua_logo.jpg'">
+                <span>عالم أدوات الذكاء الاصطناعي &bull; Saloua Bourmada</span>
+            </div>
+            <p class="footer-text">
+                منصتك الشاملة لاكتشاف أفضل أدوات وحلول الذكاء الاصطناعي التوليدي والإنتاجي لتعزيز مهاراتك وتسريع أعمالك اليومية.
+            </p>
+            <div class="footer-links">
+                <a href="#toolsGrid" class="footer-link">استعراض الأدوات</a>
+                <a href="#" onclick="openAddToolModal(); return false;" class="footer-link">إضافة أداة</a>
+                <a href="index.html" class="footer-link"><i class="fa-solid fa-house"></i> معرض الأعمال</a>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 تم التصميم والتطوير بواسطة <strong>Saloua Bourmada</strong> - جميع الحقوق محفوظة</span>
+                <span>تُحفظ أدواتك ومفضلتك في المتصفح فقط بكل أمان وسرعة ⚡</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="ai-tools/js/data.js"></script>
+    <script src="ai-tools/js/app.js"></script>
+</body>
+</html>
