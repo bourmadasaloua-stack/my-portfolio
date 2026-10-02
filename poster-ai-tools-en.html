@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase Poster - AI Tools Universe | Saloua Bourmada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #f0fdfa;
+            --bg-card: #ffffff;
+            --primary: #0891b2;
+            --primary-light: #06b6d4;
+            --primary-dark: #0e7490;
+            --accent: #0284c7;
+            --text-main: #0f172a;
+            --text-secondary: #475569;
+            --border-color: rgba(6, 182, 212, 0.15);
+            --glow: 0 12px 30px rgba(6, 182, 212, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(14, 116, 144, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.04) 0%, transparent 60%);
+        }
+
+        .poster-container {
+            max-width: 950px;
+            width: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 253, 250, 0.9));
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 28px;
+            padding: 50px;
+            position: relative;
+            box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.1), 0 0 50px rgba(6, 182, 212, 0.12);
+            backdrop-filter: blur(16px);
+            overflow: hidden;
+        }
+
+        .poster-container::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            left: -120px;
+            width: 320px;
+            height: 320px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .poster-container::after {
+            content: '';
+            position: absolute;
+            bottom: -120px;
+            right: -120px;
+            width: 320px;
+            height: 320px;
+            background: #0284c7;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .inner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Top Action Bar */
+        .top-action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateX(-4px);
+        }
+
+        .live-demo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 9px 20px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .live-demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.5);
+            background: linear-gradient(135deg, #0891b2, #0e7490);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(6, 182, 212, 0.12);
+            padding-bottom: 30px;
+        }
+
+        .creator-avatar-wrap {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .creator-avatar {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.25);
+        }
+
+        .online-dot {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            width: 15px;
+            height: 15px;
+            background: #10b981;
+            border: 3px solid #fff;
+            border-radius: 50%;
+        }
+
+        .badge {
+            background: linear-gradient(90deg, #0891b2, #0284c7);
+            color: #fff;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 15px rgba(8, 145, 178, 0.25);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #0f172a 20%, #0891b2 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .author-tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Stats Strip */
+        .stats-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(6, 182, 212, 0.18);
+            border-radius: 16px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(6, 182, 212, 0.15);
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Showcase Banner */
+        .showcase {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(2, 132, 199, 0.04));
+            border: 1px solid rgba(6, 182, 212, 0.18);
+            border-radius: 20px;
+            padding: 25px 30px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .showcase-text {
+            flex: 1;
+        }
+
+        .showcase-text h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+        }
+
+        .showcase-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        .showcase-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0891b2, #0284c7);
+            border-radius: 20px;
+            width: 120px;
+            height: 120px;
+            font-size: 3.2rem;
+            color: #ffffff;
+            box-shadow: 0 12px 30px rgba(6, 182, 212, 0.35);
+            animation: pulseGlow 3s infinite ease-in-out;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 35px rgba(6, 182, 212, 0.5); }
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(6, 182, 212, 0.15);
+            border-radius: 18px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+            box-shadow: 0 12px 30px rgba(6, 182, 212, 0.12);
+        }
+
+        .feature-icon {
+            background: rgba(6, 182, 212, 0.08);
+            color: var(--primary);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        /* Highlights Row */
+        .highlights-row {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(6, 182, 212, 0.04);
+            border: 1px dashed rgba(6, 182, 212, 0.3);
+            border-radius: 18px;
+            padding: 20px 25px;
+            margin-bottom: 35px;
+            gap: 20px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .highlight-item i {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .highlight-item span {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .highlight-item label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(6, 182, 212, 0.12);
+        }
+
+        .footer-text {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+        }
+
+        .accent-text {
+            color: var(--primary-dark);
+            font-weight: 800;
+        }
+
+        @media (max-width: 768px) {
+            .poster-container { padding: 30px 20px; }
+            .stats-strip { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: 1fr; }
+            .showcase { flex-direction: column; text-align: center; }
+            .highlights-row { flex-direction: column; gap: 20px; }
+            h1 { font-size: 1.9rem; }
+            .top-action-bar { flex-direction: column; gap: 12px; align-items: stretch; }
+            .back-link, .live-demo-btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <div class="inner-content">
+            
+            <!-- Top Action Navigation -->
+            <div class="top-action-bar">
+                <a href="index-en.html#projects" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+                </a>
+                <a href="ai-tools/index.html" target="_blank" class="live-demo-btn">
+                    <i class="fa-solid fa-rocket"></i> Launch Live Demo
+                </a>
+            </div>
+
+            <!-- Header -->
+            <header>
+                <div class="creator-avatar-wrap">
+                    <img src="ai-tools/assets/saloua_profile.jpg" alt="Saloua Bourmada" class="creator-avatar" onerror="this.src='avatar.png'">
+                    <span class="online-dot" title="Online"></span>
+                </div>
+                <div>
+                    <span class="badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Comprehensive AI Directory 2026</span>
+                </div>
+                <h1>AI Tools Universe</h1>
+                <div class="author-tagline">
+                    <i class="fa-solid fa-code-branch"></i> Designed & Developed by <strong>Saloua Bourmada</strong> &bull; Software Engineer
+                </div>
+                <p class="subtitle">
+                    Your complete intelligent guide to the world's most powerful AI tools: Text generation, image creation, video engineering, coding assistants, and smart PDF handling with step-by-step guides and printable PDF manuals.
+                </p>
+            </header>
+
+            <!-- Quick Live Stats -->
+            <div class="stats-strip">
+                <div class="stat-card">
+                    <div class="stat-number"><i class="fa-solid fa-layer-group"></i> 23+</div>
+                    <div class="stat-label">Curated AI Tools</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number"><i class="fa-solid fa-tags"></i> 9</div>
+                    <div class="stat-label">Specialized Categories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number"><i class="fa-solid fa-file-pdf"></i> PDF</div>
+                    <div class="stat-label">Printable Comprehensive Guide</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number"><i class="fa-solid fa-shield-halved"></i> 100%</div>
+                    <div class="stat-label">Local Storage & Privacy</div>
+                </div>
+            </div>
+
+            <!-- Showcase Banner -->
+            <div class="showcase">
+                <div class="showcase-text">
+                    <h3><i class="fa-solid fa-microchip"></i> Modern Liquid Water Glass Interface</h3>
+                    <p>
+                        Engineered with modern web standards, offering ultra-smooth user interaction with liquid glass aesthetics, instantaneous search, quick free-tier filter, and one-click JSON backup & restore.
+                    </p>
+                </div>
+                <div class="showcase-visual">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+            </div>
+
+            <!-- Detailed Features -->
+            <div class="features-grid">
+                
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>Smart Instant Search & Categorization</h3>
+                    <p>Categorized filtering across Text, Image, Video, Code, PDF, and Audio tools, with a one-click toggle for free-tier tools and versatile sorting options.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-floppy-disk"></i></div>
+                    <h3>Favorites & Local JSON Export / Import</h3>
+                    <p>Manage your favorite AI toolbox stored safely in browser LocalStorage without needing an account, with instant JSON backup export and import.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+                    <h3>Full PDF Guidebook & Printable Documentation</h3>
+                    <p>Dedicated printable PDF guide page complete with direct links, feature summaries, and ideal use cases for each AI model.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-circle-plus"></i></div>
+                    <h3>Custom Tool Submission Modal</h3>
+                    <p>Interactive modal enabling users and developers to add custom AI tools directly into their personal collection with custom metadata.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>Dynamic Typography & Dark / Light Theme</h3>
+                    <p>Switch between 6 Arabic and modern Google web fonts alongside instant dark and light mode toggle with state persistence.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <h3>High Performance & 3D Glass Effects</h3>
+                    <p>Fluid water-glass styling, realistic physical shadows, metallic lock badges, and 100% mobile-responsive layout across all devices.</p>
+                </div>
+
+            </div>
+
+            <!-- Highlights Row -->
+            <div class="highlights-row">
+                <div class="highlight-item">
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                    <span>Lightning Fast</span>
+                    <label>Instant load & zero latency</label>
+                </div>
+                <div class="highlight-item">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>100% Private</span>
+                    <label>No tracking or data collection</label>
+                </div>
+                <div class="highlight-item">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>Fully Responsive</span>
+                    <label>Optimized for mobile & tablet</label>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <p class="footer-text">
+                    AI Tools Universe &copy; 2026. Designed & Developed by 
+                    <span class="accent-text">Saloua Bourmada - Software Engineer</span>. 
+                    All rights reserved.
+                </p>
+            </footer>
+
+        </div>
+    </div>
+</body>
+</html>

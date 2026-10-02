@@ -33,47 +33,44 @@ body {
         radial-gradient(circle at 90% 80%, rgba(8, 145, 178, 0.04) 0%, transparent 40%);
 }
 
-/* Floating background glowing orbs - Optimized with Radial Gradients */
+/* Floating background glowing orbs - Ultra-Lightweight & GPU Efficient */
 .glow-orb {
     position: absolute;
     border-radius: 50%;
     z-index: 1;
     pointer-events: none;
-    opacity: 0.85; /* Increased opacity to compensate for the softer radial gradient */
-    animation: float 15s infinite ease-in-out alternate;
-    will-change: transform; /* Hardware Acceleration */
+    opacity: 0.7;
     transform: translate3d(0, 0, 0);
 }
 
 .orb-1 {
     top: 50px;
     left: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, rgba(79, 70, 229, 0) 70%);
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.08) 0%, rgba(79, 70, 229, 0) 70%);
 }
 
 .orb-2 {
     top: 800px;
     right: -100px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(8, 145, 178, 0.12) 0%, rgba(8, 145, 178, 0) 70%);
-    animation-delay: -5s;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(8, 145, 178, 0.08) 0%, rgba(8, 145, 178, 0) 70%);
 }
 
 .orb-3 {
     bottom: 200px;
     left: 20%;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(168, 85, 247, 0) 70%);
-    animation-delay: -10s;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0) 70%);
 }
 
-@keyframes float {
-    0% { transform: translate3d(0, 0, 0) scale(1); }
-    100% { transform: translate3d(100px, 80px, 0) scale(1.2); }
+/* Performance optimizations for fast scrolling */
+.projects-section, .rights-section, .contact-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 600px;
 }
 
 /* Animations */
@@ -1240,6 +1237,78 @@ footer {
     width: 80%;
     background: linear-gradient(90deg, #38bdf8, #fb7185);
     border-radius: 3px;
+}
+
+/* AI Tools Universe Mockup Styling */
+.ai-tools-body {
+    padding: 14px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(135deg, #083344, #0e7490) !important;
+    color: #ffffff;
+}
+
+.ai-search-mockup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(6, 182, 212, 0.35);
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 0.72rem;
+    color: #a5f3fc;
+}
+
+.ai-tags-row {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+}
+
+.ai-tag-pill {
+    background: rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    color: #67e8f9;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.ai-tag-pill.active {
+    background: #06b6d4;
+    color: #083344;
+    border-color: #22d3ee;
+}
+
+.ai-tools-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.ai-tool-mini-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 6px 4px;
+    text-align: center;
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #ecfeff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.ai-tool-mini-card i {
+    color: #22d3ee;
+    font-size: 0.85rem;
 }
 
 
